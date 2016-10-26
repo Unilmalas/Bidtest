@@ -1,0 +1,18 @@
+<h1>Bids</h1>
+<h3>current highest bid: {{ highbid }}</h3>
+<form role='form'>
+  <div class='form-group'>
+    <div class="input-group">
+      <input ng-model='bidPrice' id='bidPrice' class='form-control'>
+      <span class='input-group-btn'>
+        <button ng-click='postBid()' class='btn btn-default'>Post Bid</button>
+      </span>
+    </div>
+  </div>
+</form>
+<ul class='list-group'>
+  <li ng-repeat="bid in bids | orderBy:'-date'" class='list-group-item'>
+    <strong>{{ bid.username }}</strong>
+    <span> {{ bid.price }} at {{ bid.date }} </span>
+  </li>
+</ul>
